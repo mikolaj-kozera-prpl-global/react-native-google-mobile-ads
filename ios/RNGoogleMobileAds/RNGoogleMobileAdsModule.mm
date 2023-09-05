@@ -98,6 +98,8 @@ RCT_EXPORT_METHOD(openDebugMenu : (NSString *)adUnit) {
                         resolve:(RCTPromiseResolveBlock)resolve
                          reject:(RCTPromiseRejectBlock)reject {
 #if !TARGET_OS_MACCATALYST
+GADMobileAds.sharedInstance.applicationVolume = 0.0;
+GADMobileAds.sharedInstance.applicationMuted = YES;
   if (requestConfiguration[@"maxAdContentRating"]) {
     NSString *rating = requestConfiguration[@"maxAdContentRating"];
     if ([rating isEqualToString:@"G"]) {
