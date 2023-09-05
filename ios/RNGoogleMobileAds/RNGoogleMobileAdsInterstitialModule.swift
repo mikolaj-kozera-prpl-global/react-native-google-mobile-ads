@@ -93,6 +93,8 @@ class RNGoogleMobileAdsInterstitialModule: NSObject {
       adRequest: GAMRequest,
       completionHandler: @escaping (GADInterstitialAd?, Error?) -> ()
     ) {
+      GADMobileAds.sharedInstance().applicationVolume = 0.0
+      GADMobileAds.sharedInstance().applicationMuted = true
       GADInterstitialAd.load(
         withAdUnitID: adUnitId,
         request: adRequest,
