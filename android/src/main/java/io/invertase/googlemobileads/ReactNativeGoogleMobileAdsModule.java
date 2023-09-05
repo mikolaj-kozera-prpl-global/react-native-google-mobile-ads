@@ -136,6 +136,9 @@ public class ReactNativeGoogleMobileAdsModule extends ReactNativeModule {
             promise.resolve(result);
           }
         });
+
+    MobileAds.setAppVolume(0.0);
+    MobileAds.setAppMuted(true);
   }
 
   @ReactMethod
